@@ -1,0 +1,6 @@
+{
+  "name": "PA Adven Natal 2026 — Allah Peduli",
+  "description": "Panduan Pemahaman Alkitab Intergenerasional ramah lansia dengan huruf besar, kontras tinggi, bacaan Alkitab lengkap, dan lagu pujian pembuka serta penutup.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

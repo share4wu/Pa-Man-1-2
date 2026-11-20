@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Roboto', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    letter-spacing: -0.015em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #F7F5F0;
+    color: #1A1C1E;
+    letter-spacing: -0.015em;
+  }
+
+  /* High-visibility focus indicators for keyboard and senior accessibility */
+  *:focus-visible {
+    outline: 3px solid #1E3246;
+    outline-offset: 3px;
+  }
+
+  .dark *:focus-visible {
+    outline: 3px solid #fbbf24;
+    outline-offset: 3px;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.font-sans-body {
+  font-family: var(--font-sans);
+  letter-spacing: -0.015em;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Clean print formatting for congregations who print handouts */
+@media print {
+  header,
+  nav,
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+}
